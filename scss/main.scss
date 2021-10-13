@@ -1,0 +1,62 @@
+@use "_partial.scss";
+@import "external";
+
+$hide: "display:none";
+$animationName: blinker;
+$font-a : Courier;
+$font-stack: Verdana;
+$primary-color: rgb(163, 67, 67);
+.unorderedList{
+  width:100%;
+}
+
+body {
+  
+  font: 85% $font-stack;
+  color: $primary-color;
+}
+.flexing{
+  display:flex;
+  flex-direction:column;
+}
+@mixin div-styles {
+  
+  text-align:center;
+  background-color:adjust-hue($color: #d8d8d8, $degrees: 23);
+  color: rgb(187, 178, 54);
+  font-family :$font-stack;
+  font-weight: 1px;
+  border: 1px dotted rgb(95, 95, 95);
+  
+}
+div {
+  @include div-styles;
+}
+ul{text-align:center;
+  margin-top:30px;
+  width:100%;
+  a{
+    color:$primary-color;
+    font-family:$font-a;
+    font-size: 20px;
+    border:solid  2px gray;
+    padding:2px;
+    text-decoration: none;
+    animation-name:$animationName;
+    animation-duration:1s;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+
+
+  }
+}
+a:hover{
+  animation-play-state:paused;
+  cursor:pointer;
+}
+@keyframes blinker{
+  0%{opacity:1.0;}
+  50%{opacity:0.0;}
+  100%{opacity:1.0;}
+}
+

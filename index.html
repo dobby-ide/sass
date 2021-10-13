@@ -1,0 +1,137 @@
+
+    
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./css/main.css" />
+    <meta charset="utf-8">
+    <title>Simple HTML5 page</title>
+    </head>
+  <body>
+   <script>
+    window.addEventListener("load", () => {
+        document.querySelector("#myButton").addEventListener("click", e => {
+            document.getElementById("home").innerHTML = `$hide: "display:none";
+$animationName: blinker;
+$font-a : Courier;
+$font-stack: Verdana;
+$primary-color: rgb(163, 67, 67);`;
+           
+        });
+    });
+     window.addEventListener("load", () => {
+        document.querySelector("#myButton2").addEventListener("click", e => {
+            document.getElementById("Nesting").innerHTML = `ul{text-align:center;
+  margin-top:30px;
+  width:100%;
+  a{
+    font-family:$font-a;
+    font-size: 20px;
+    border:solid  2px gray;
+    padding:2px;
+    text-decoration: none;
+    animation-name:$animationName;
+    animation-duration:1s;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+
+
+  }
+}`;
+          });
+        });
+ window.addEventListener("load", () => {
+        document.querySelector("#myButton3").addEventListener("click", e => {
+            document.getElementById("Partials").innerHTML = `
+$background-color: rgb(124, 124, 124);
+$primaryButton: rgb(120,200,200);
+body{
+  
+  background-color: $background-color;
+  padding:4px;
+  margin:4px;
+}
+button{
+  background: $primaryButton;
+  
+}`;
+          });
+        });
+         window.addEventListener("load", () => {
+        document.querySelector("#myButton4").addEventListener("click", e => {
+            document.getElementById("Mixins").innerHTML = `@mixin div-styles {
+  
+  text-align:center;
+  background-color:adjust-hue($color: #d8d8d8, $degrees: 23);
+  color: rgb(187, 178, 54);
+  font-family :$font-stack;
+  font-weight: 1px;
+  border: 1px dotted rgb(95, 95, 95);
+  
+}`;
+          });
+        });
+         window.addEventListener("load", () => {
+        document.querySelector("#myButton5").addEventListener("click", e => {
+            document.getElementById("Extend").innerHTML = `@use "_partial.scss";
+@import "external";`;
+          });
+        });
+</script>
+    
+    <header>
+      <div>
+        <h1> HTML5 AND SCSS </h1>
+        <h2> A Simple HTML5 WITH SCSS</h2>
+      
+      </div>
+      <div class = "unorderedList"> 
+             <ul>
+          <a id="myButton">Variables</a>
+            <a id = "myButton2">Nesting</a>
+          <a id="myButton3">Partials</a>
+          <a id ="myButton4">Mixins</a>
+          <a id="myButton5">Extend</a>
+        
+          </ul>
+          </div>
+  
+        </nav>
+    </header>
+    
+   
+      </section>
+    <div class="flexing">
+    <section>
+      <h2>Variables used(press Variables)</h2>
+      <p id = "home"> </p>
+      </section>
+    
+    <section>
+      <h2> Nesting(press Nesting) </h2>
+       <p id = "Nesting"></p>
+       
+    </section>
+  
+     <section>
+      <h2> Partials(press Partials) </h2>
+       <p id = "Partials"></p>
+       
+    </section>
+    <section>
+      <h2> Mixins(press Mixins) </h2>
+       <p id = "Mixins"></p>
+       
+    </section>
+     <section>
+      <h2>Extend(press Extend)</h2>
+       <p id = "Extend"></p>
+       
+    </section>
+    </div>
+     <section>
+      <h2> <button onClick="window.location.reload();">Clean up time!!</button> </h2>
+       <p></p>
+       
+    </section>
+  
